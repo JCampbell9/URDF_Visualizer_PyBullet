@@ -48,10 +48,7 @@ class Vizulizer():
             p.setJointMotorControl2(robot, i, p.POSITION_CONTROL, targetPosition=0, force=0)
             joint_info = p.getJointInfo(robot, i)
             linkName = joint_info[12].decode("ascii")
-            # print(p.getJointInfo(robot, i)[2])
 
-            # if "sensor" in linkName:
-            #     LinkId.append("skip")
             if joint_info[2] == 4:
                 LinkId.append("skip")
             else:
